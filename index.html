@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №3: Ветвления</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа №3: Ветвления</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Задание к работе</h2>
+            <p><strong>Цели и задачи работы:</strong> Изучение разветвляющихся алгоритмов, операторов выбора, программирование разветвляющегося вычислительного процесса.</p>
+            <p><strong>Задание к работе:</strong> Реализовать разветвляющийся вычислительный процесс.Самостоятельно решить задачи в соответствии с индивидуальным вариантом.</p>
+            <p><strong>Требования к отчету:</strong> Отчет должен содержать титульный лист, задание, блок-схему алгоритма решения задачи, текст программы с комментариями, тесты.</p>
+        </section>
+
+        <section>
+            <h2>Задание 1</h2>
+            <p>Дано целое число A. Проверить истинность высказывания: «Число A является положительным и двузначным».</p>
+            <textarea id="code" readonly>
+function task1() {
+    const input = document.getElementById('input1').value;
+    const A = Number(input);
+
+    if (isNaN(A) || !Number.isInteger(A)) {
+        document.getElementById('output1').textContent = "Ошибка: Введите целое число!";
+    } else if (A > 0 && A >= 10 && A &lt;= 99) {
+        document.getElementById('output1').textContent = "TRUE";
+    } else {
+        document.getElementById('output1').textContent = "FALSE";
+    }
+}
+            </textarea>
+            <textarea id="input1" placeholder="Введите значение A"></textarea>
+            <button onclick="task1()">Выполнить код</button>
+            <p id="output1"></p>
+        </section>
+
+        <section>
+            <h2>Задание 2</h2>
+            <p>Дано целое число. Если оно является положительным и четным, то прибавить к нему 1; в противном случае не изменять его. Вывести полученное число.</p>
+            <textarea id="code" readonly>
+function task2() {
+    const input = document.getElementById('input2').value;
+    const num = Number(input);
+
+    if (isNaN(num) || !Number.isInteger(num)) {
+        document.getElementById('output2').textContent = "Ошибка: Введите целое число!";
+    } else if (num > 0 && num % 2 == 0) {
+        document.getElementById('output2').textContent = num + 1;
+    } else {
+        document.getElementById('output2').textContent = num;
+    }
+}
+            </textarea>
+            <textarea id="input2" placeholder="Введите число"></textarea>
+            <button onclick="task2()">Выполнить код</button>
+            <p id="output2"></p>
+        </section>
+
+        <section>
+            <h2>Задание 3</h2>
+            <p>Вычислить значение функции y=f(x) при произвольных значениях x.</p>
+            <textarea id="code" readonly>
+function task3() {
+    const x = parseFloat(document.getElementById('input3').value);
+    let y;
+    let a = 2.1
+    let b = 6.7
+
+    if (x &lt; -2) {
+        y = Math.pow(x, 3) + 2 * a;
+    } else if (x >= -2 && x &lt;= 5) {
+        y = Math.log(Math.abs(Math.cos(b * x)));
+    } else {
+        y = Math.pow(x, 2) * Math.exp(x);
+    }
+
+    document.getElementById('output3').textContent = `y = ${y}`;
+}
+            </textarea>
+            <textarea id="input3" placeholder="Введите значение x"></textarea>
+            <button onclick="task3()">Выполнить код</button>
+            <p id="output3"></p>
+        </section>
+
+        <section>
+            <h2>Задание 4</h2>
+            <p>Вычислить значение функции y=f(x) при произвольных значениях x. Использовать оператор switch.</p>
+            <textarea id="code" readonly>
+function task4() {
+    const x = parseInt(document.getElementById('input4').value);
+    let y;
+    let a = 2.1
+    let b = 6.7
+    
+    switch (x) {
+        case -3:
+            y = Math.pow(x, 3) + 2 * a;
+            break;
+        case 4:
+            y = Math.log(Math.abs(Math.cos(b * x)));
+            break;
+        case 6:
+            y = Math.pow(x, 2) * Math.exp(x);
+            break;
+        default:
+            y = "Нет подходящей ветви";
+    }
+
+    document.getElementById('output4').textContent = `y = ${y}`;
+}                
+            </textarea>
+            <textarea id="input4" placeholder="Введите значение x"></textarea>
+            <button onclick="task4()">Выполнить код</button>
+            <p id="output4"></p>
+        </section>
+    </main>
+    <footer>
+        <p>2024. Лабораторная работа №3. Бровко Георгий Александрович.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
