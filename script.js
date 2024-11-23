@@ -62,9 +62,9 @@ function task4() {
         case 6:
             y = Math.pow(x, 2) * Math.exp(x);
             break;
-        default:
-            y = "Нет подходящей ветви";
+            default:
+                y = "Нет подходящей ветви";
     }
 
-    document.getElementById('output4').textContent = y.toFixed(6);
+    document.getElementById('output4').textContent = `y = ${y}`;
 }
